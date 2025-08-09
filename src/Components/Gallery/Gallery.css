@@ -1,0 +1,142 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Kolker+Brush&display=swap');
+
+.gallery-section {
+    background-color: #fefaf8;
+    /* light cream */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: tfadeIn 0.8s ease forwards;
+}
+
+.italianno {
+    font-family: 'Italianno', serif;
+}
+
+.kolker {
+    font-family: 'Kolker Brush', cursive;
+}
+
+/* Grid styling */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.gallery-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: tfadeUp 0.8s ease forwards;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Animate heading tfade-in */
+.tfade-in {
+    opacity: 0;
+    animation: tfadeIn 0.8s ease forwards;
+}
+
+/* Animate gallery items tfade-up one by one */
+.tfade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: tfadeUp 0.8s ease forwards;
+}
+
+/* Overlay on hover */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* 30% black */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height 0.4s ease;
+}
+
+.gallery-item:hover .overlay {
+    height: 100%;
+}
+
+.overlay-text {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
+}
+
+.gallery-item:hover .overlay-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* View Album button */
+.view-album-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Italiana', serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-album-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Keep your existing tfadeIn and tfadeUp keyframes */
+@keyframes tfadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes tfadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

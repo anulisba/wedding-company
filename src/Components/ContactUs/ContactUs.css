@@ -1,0 +1,113 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Kolker+Brush&family=Playfair+Display:wght@400;700&display=swap');
+
+.contact-section {
+    position: relative;
+    background: url("https://res.cloudinary.com/dpo91btlc/image/upload/v1754758328/448510298_456448090586149_4763137570647203622_n_q1ra3y.jpg") center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.5);
+    /* white overlay with 50% opacity */
+}
+
+
+.contact-small {
+    font-family: 'Kolker Brush', cursive;
+    font-size: 3.2rem;
+    margin: 0;
+}
+
+.contact-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin: 10px 0;
+}
+
+.contact-button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #000;
+    color: #fff;
+}
+
+.contact-content {
+    position: relative;
+    text-align: center;
+    color: #000;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* When animation is triggered */
+.contact-content.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Optional: add a subtle pulse after animation to keep it lively */
+.contact-content.animate {
+    animation: pulseScale 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulseScale {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(-5px) scale(1.02);
+    }
+}
+
+
+/* Animation */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-main {
+        font-size: 2.5rem;
+    }
+
+    .contact-small {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-main {
+        font-size: 2.2rem;
+    }
+
+    .contact-small {
+        font-size: 2.2rem;
+    }
+}

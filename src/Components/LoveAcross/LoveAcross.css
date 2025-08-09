@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@400;500&family=Cherish&display=swap');
+
+.love-across {
+    background-color: #f9f5f1;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.love-heading {
+    font-family: 'Italiana', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 100;
+}
+
+.love-heading .italic {
+    font-family: 'Cherish', cursive;
+    font-size: 3.2rem;
+}
+
+/* Slider Layout */
+.laslider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+    color: #333;
+}
+
+.laslider-container {
+    overflow: hidden;
+    width: 80%;
+}
+
+.laslider-track {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.laslide {
+    flex: 0 0 calc(100% / 3);
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.laslide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.laoverlay-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: 'Italiana', serif;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Caption */
+.love-caption {
+    font-family: 'Italiana', serif;
+    font-size: 2.2rem;
+    margin-top: 30px;
+    line-height: 2.8rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.love-caption .italic {
+    font-family: 'Cherish', cursive;
+    font-size: 3.2rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .laslide {
+        flex: 0 0 calc(100% / 2);
+    }
+
+    .laslider-track {
+        transform: translateX(0);
+        /* reset to avoid bug */
+    }
+}
+
+@media (max-width: 600px) {
+    .laslide {
+        flex: 0 0 100%;
+    }
+
+    .love-heading {
+        font-family: 'Italiana', serif;
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        font-weight: 100;
+    }
+
+    .love-heading .italic {
+        font-family: 'Cherish', cursive;
+        font-size: 2.2rem;
+    }
+
+    .love-caption {
+        font-family: 'Italiana', serif;
+        font-size: 1.2rem;
+        margin-top: 30px;
+        line-height: 2.2rem;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .love-caption .italic {
+        font-family: 'Cherish', cursive;
+        font-size: 2.2rem;
+    }
+
+}
+
+/* Fade-in and slide-up for section elements */
+.tfade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.tfade-up-delay {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: tfadeUp 0.8s ease 0.5s forwards;
+}
+
+.tfade-in {
+    opacity: 0;
+    animation: tfadeIn 0.8s ease forwards;
+}
+
+/* Active slide animation */
+.active-slide img {
+    transform: scale(1.05);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+@keyframes tfadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tfadeIn {
+    to {
+        opacity: 1;
+    }
+}

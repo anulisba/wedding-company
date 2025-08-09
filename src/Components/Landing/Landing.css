@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;500&family=Cherish&display=swap');
+
+body {
+    margin: 0;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* 50% transparent black */
+    z-index: 1;
+}
+
+/* Update image container */
+.landing-images {
+    position: relative;
+    /* Needed for overlay positioning */
+    display: flex;
+    width: 100%;
+    /* Changed from 90% to full width */
+    height: 100%;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* Ensure images take equal width */
+.landing-images img {
+    flex: 1;
+    min-width: 0;
+    /* Allows equal distribution */
+    object-fit: cover;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation-fill-mode: forwards;
+}
+
+/* Increase z-index for text */
+.landing-text {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cherish', cursive;
+    font-size: 84px;
+    color: white;
+    text-align: center;
+    animation: fadeInText 1s ease forwards;
+    z-index: 2;
+    /* Ensure text appears above overlay */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .landing-images {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 50vh;
+    }
+
+    .landing-images img {
+        width: 50%;
+        height: 50vh;
+        flex: none;
+    }
+}
+
+
+
+.landing {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+.landing-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 10;
+}
+
+.landing-header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+    margin: 0;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 1.1rem;
+}
+
+.landing-header nav ul li {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.landing-header nav ul li:hover {
+    color: #888;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+
+.slide-0 {
+    animation: slideIn 0.8s ease forwards;
+}
+
+.slide-1 {
+    animation: slideIn 0.8s ease forwards 1s;
+}
+
+.slide-2 {
+    animation: slideIn 0.8s ease forwards 2s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Text */
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .landing-header nav ul {
+        gap: 20px;
+        font-size: 1rem;
+    }
+
+    .landing-text {
+        font-size: 1.5rem;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing {
+        height: 50vh;
+    }
+
+    .landing-header nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .landing-text {
+        font-size: 1.2rem;
+    }
+}
