@@ -45,6 +45,7 @@ body {
     transform: translateX(-50%);
     font-family: 'Cherish', cursive;
     font-size: 84px;
+    font-weight: 100;
     color: white;
     text-align: center;
     animation: fadeInText 1s ease forwards;
