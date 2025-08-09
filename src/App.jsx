@@ -1,5 +1,5 @@
 import React from "react";
-import Landing from "./components/Landing/Landing";
+import Landing from "./Components/Landing/Landing";
 import AboutUs from "./Components/About Us/AboutUs";
 import LoveAcross from "./Components/LoveAcross/LoveAcross";
 import Gallery from "./Components/Gallery/Gallery";
